@@ -64,7 +64,7 @@ $document .= "<tr><td>Shipping</td><td>" . $shipping . "</td><td></td><td>$" . $
 
 
 $total_cost = $shipping_cost + $notebook['subtotal'] + $calculator['subtotal'] + $textbook['subtotal'];
-$document .= "<tr><td>Total cost</td><td></td><td></td><td>$" . ($shipping_cost . "</td></tr>";
+$document .= "<tr><td>Total cost</td><td></td><td></td><td>$" . $total_cost . "</td></tr>";
 
 $document .= "</table>";
 
