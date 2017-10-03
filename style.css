@@ -1,0 +1,21 @@
+body {
+    background: #CED3DC;
+    font-family: arial;
+    padding-top: 75px;
+}
+
+#topbar {
+    background: #A31621;
+    padding: 10px 0 10px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+#store {
+    margin: auto;
+    width: 50%;
+    background-color: rgb(220,220,220);
+    padding: 25px;
+}
