@@ -56,7 +56,7 @@ $document = "";
 
 // Iterate through each question, add the feedback to $document, modify $score
 for($i = 1; $i <= 5; $i++) {
-    $document .= "Question " . $i . ": " . $question_user[$i]             . "<br>";
+    $document .= "Question " . $i . ": " . $questions[$i]             . "<br>";
     $document .= "You answered: "        . $answers[$i][$answer_user[$i]] . "<br>";
     $document .= "Correct answer: "      . $answers[$i][$answer_key[$i]]  . "<br>";
 
