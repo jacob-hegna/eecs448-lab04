@@ -1,10 +1,5 @@
 <?php
 
-$_POST['username'] = "jacobhegna@gmail.com";
-$_POST['password'] = "testpwd";
-$_POST['textbook-qnt'] = 5;
-$_POST['shp'] = "overnight";
-
 $document = "";
 
 $document .=
@@ -49,9 +44,27 @@ $notebook['subtotal'] = $notebook['qnt'] * $notebook['price'];
 
 $document .= "<tr><td>Notebook</td><td>" . $notebook['qnt'] . "</td><td>$" . $notebook['price'] . "</td><td>$" . $notebook['subtotal'] . "</td></tr>";
 
-$shipping = $_POST['shp'];
+$shipping = "";
+$shipping_cost = 0;
+if($_POST['shp'] == 'a') {
+    $shipping = "7 Day";
+    $shipping_cost = 0;
+}
+if($_POST['shp'] == 'b') {
+    $shipping = "Overnight";
+    $shipping_cost = 50;
+}
+if($_POST['shp'] == 'c') {
+    $shipping = "3 Day";
+    $shipping_cost = 5;
+}
 
-$document .= "<tr><td>Shipping</td><td>" . $shipping . "</td></tr>";
+
+$document .= "<tr><td>Shipping</td><td>" . $shipping . "</td><td></td><td>$" . $shipping_cost . "</td></tr>";
+
+
+$total_cost = $shipping_cost + $notebook['subtotal'] + $calculator['subtotal'] + $textbook['subtotal'];
+$document .= "<tr><td>Total cost</td><td></td><td></td><td>$" . ($shipping_cost . "</td></tr>";
 
 $document .= "</table>";
 
