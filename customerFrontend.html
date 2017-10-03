@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="formChecker.js"></script>
     <title>Lab04 Store!</title>
 </head>
 <body>
@@ -11,12 +12,12 @@
 
         <center><h2>Jacob's Store</h2></center>
 
-        Username (email): <input type="text" name="username"><br>
-        Password: <input type="password" name="password"><br>
+        <form id="store-form" action="customerBackend.php" method="post">
 
-        <br>
+            Username (email): <input type="text" name="username" id="username"><br>
+            Password: <input type="password" name="password" id="password"><br>
 
-        <form action="customerBackend.php" method="post">
+            <br>
 
             <table id="item-table">
             <tr><td>Item</td><td>Price</td><td>Quantity</td></tr>
@@ -24,21 +25,21 @@
             <tr>
                 <td>Math textbook</td>
                 <td>$100</td>
-                <td><input type="number" name="textbook-qnt" value="0"></td>
+                <td><input type="number" name="textbook-qnt" id="textbook-qnt" value="0"></td>
                 <td>
                 </td>
             </tr>
             <tr>
                 <td>Calculator</td>
                 <td>$50</td>
-                <td><input type="number" name="calculator-qnt" value="0"></td>
+                <td><input type="number" name="calculator-qnt" id="calculator-qnt" value="0"></td>
                 <td>
                 </td>
             </tr>
             <tr>
                 <td>Notebook</td>
                 <td>$10</td>
-                <td><input type="number" name="notebook-qnt" value="0"></td>
+                <td><input type="number" name="notebook-qnt" id="notebook-qnt" value="0"></td>
                 <td>
                 </td>
             </tr>
@@ -47,7 +48,7 @@
             <br>
 
             <label>Shipping options</label><br>
-            <label><input type="radio" name="textbook-shp" id="textbook-shp-a" value="a">7 day (free)</label><br>
+            <label><input type="radio" name="textbook-shp" id="textbook-shp-a" value="a" checked>7 day (free)</label><br>
             <label><input type="radio" name="textbook-shp" id="textbook-shp-b" value="b">Over night ($50)</label><br>
             <label><input type="radio" name="textbook-shp" id="textbook-shp-c" value="c">3 day ($5)</label><br>
 
