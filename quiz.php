@@ -1,5 +1,10 @@
 <?php
 
+$_POST["q1"] = "a";
+$_POST["q2"] = "c";
+$_POST["q3"] = "c";
+$_POST["q4"] = "r";
+
 $questions[1] = "Q1";
 $questions[2] = "Q2";
 $questions[3] = "Q3";
@@ -19,17 +24,19 @@ $score = 0;
 $document = "";
 
 for($i = 1; $i <= 4; $i++) {
-    $document += "Question " . $i . ": " . $questions[$i] . "<br>";
-    $document += "You answered: " . $answers[$i] . "<br>";
-    $document += "Correct answer: " . $answer_key[$i] . "<br>";
+    $document .= "Question " . $i . ": " . $questions[$i] . "<br>";
+    $document .= "You answered: " . $answers[$i] . "<br>";
+    $document .= "Correct answer: " . $answer_key[$i] . "<br>";
 
     // If they got this question correct
     if($answers[$i] == $answer_key[$i]) {
         $score++;
     }
+
+    $document .= "<br>";
 }
 
-$document += "<br> You answered " . $score . " out of 5 correct, which is a " . ($score / 5.0) . "%! <br>";
+$document .= "<br> You answered " . $score . " out of 5 correct, which is a " . 100*($score / 5.0) . "%! <br>";
 
 // send the page back!
 echo $document;
