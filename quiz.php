@@ -3,22 +3,37 @@
 /* START QUIZ DEFINITIONS */
 
 // Questions
-$questions[1] = "Q1";
-$questions[2] = "Q2";
-$questions[3] = "Q3";
-$questions[4] = "Q4";
+$questions[1] = "What is the capital of Kansas?";
+$questions[2] = "What city is KU located in?";
+$questions[3] = "What is 1+1?";
+$questions[4] = "What is 30+20?";
 
 // Answers
-$answers['a'] = "A";
-$answers['b'] = "B";
-$answers['c'] = "C";
-$answers['d'] = "D";
+$answers[1]['a'] = "Lawrence";
+$answers[1]['b'] = "Olathe";
+$answers[1]['c'] = "Topeka";
+$answers[1]['d'] = "Manhattan";
+
+$answers[2]['a'] = "New York City";
+$answers[2]['b'] = "LA";
+$answers[2]['c'] = "Lawrence";
+$answers[2]['d'] = "Chicago";
+
+$answers[3]['a'] = "1";
+$answers[3]['b'] = "2";
+$answers[3]['c'] = "3";
+$answers[3]['d'] = "4";
+
+$answers[3]['a'] = "50";
+$answers[3]['b'] = "60";
+$answers[3]['c'] = "55";
+$answers[3]['d'] = "45";
 
 // Answer key
 $answer_key[1] = 'a';
-$answer_key[2] = 'b';
-$answer_key[3] = 'c';
-$answer_key[4] = 'd';
+$answer_key[2] = 'c';
+$answer_key[3] = 'b';
+$answer_key[4] = 'a';
 
 /* END QUIZ DEFINITIONS */
 
@@ -33,9 +48,9 @@ $document = "";
 
 // Iterate through each question, add the feedback to $document, modify $score
 for($i = 1; $i <= 4; $i++) {
-    $document .= "Question " . $i . ": " . $question_user[$i]         . "<br>";
-    $document .= "You answered: "        . $answers[$answer_user[$i]] . "<br>";
-    $document .= "Correct answer: "      . $answers[$answer_key[$i]]  . "<br>";
+    $document .= "Question " . $i . ": " . $question_user[$i]             . "<br>";
+    $document .= "You answered: "        . $answers[$i][$answer_user[$i]] . "<br>";
+    $document .= "Correct answer: "      . $answers[$i][$answer_key[$i]]  . "<br>";
 
     // If they got this question correct
     if($answer_user[$i] == $answer_key[$i]) {
